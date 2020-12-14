@@ -1,0 +1,66 @@
+---
+title: "R Basic Exercises Solutions"
+output: html_notebook
+---
+
+Solving the following problems using the R programming language:-
+
+1. What is two to the power of five?
+
+```{r}
+        print(paste("Two to the power of five is:", (2^5)))
+```
+
+2. Create a vector called stock.prices with the following data points: 23, 27, 23, 21, 34
+
+```{r}
+        stock.prices <- c(23, 27, 23, 21, 34)
+        print("Created vector is:- ")
+        print(stock.prices)
+```
+
+3. Assign names to the price data points relating to the day of the week, starting with Mon, Tue, Wed, etc...
+
+```{r}
+        # assigning names to the elements of the stock.prices vector
+        names(stock.prices) <- c("Mon", "Tue", "Wed", "Thur", "Fri")
+        print(stock.prices)
+```
+
+4. What was the average (mean) stock price for the week? (You may need to reference a built-in function) 
+
+```{r}
+        # finding the mean or average of all the stock prices
+        average.of.stock.prices <- mean(stock.prices)
+        print(paste("Average:", average.of.stock.prices))
+```
+
+5. Create a vector called over.23 consisting of logicals that correspond to the days where the stock price 
+   was more than $23.
+   
+```{r}
+        # creating the new vector of logicals data-type
+        over.23 <- stock.prices > 23
+        print("Output Vector is:- ")
+        print(over.23)
+```
+
+6. Use the over.23 vector to filter out the stock.prices vector and only return the day and prices where 
+   the price was over $23.
+   
+```{r}
+        # filtering the over.23 vector to meet the given condition
+        print("Filtered vector is:- ")
+        filter.vector <- over.23[over.23 == T]
+        names.of.days.filtered <- names(filter.vector)
+        print(stock.prices[names.of.days.filtered])
+```
+
+7. Use a built-in function to find the day the price was the highest.
+
+```{r}
+        # finding the day on which the stock price was the highest
+        print(paste("Name of the day:",names(stock.prices[stock.prices==max(stock.prices)])))
+```
+
+   
